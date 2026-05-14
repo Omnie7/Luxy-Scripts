@@ -1,14 +1,18 @@
-local fetcher = ...
+-- ==========================================
+-- [ LIBRARY & DATABASE LOADER (LUXY CORE) ]
+-- ==========================================
+local LibraryURL = "https://raw.githubusercontent.com/Omnie7/Luxy-Core/main/Library/LuxyV2.luau"
+local DataURL    = "https://raw.githubusercontent.com/Omnie7/Luxy-Core/main/Data/KickBlox.luau"
 
--- [ LIBRARY & DATABASE ]
-local Luxy = fetcher.load("{Library}LuxyV2.luau")()
-local DB   = fetcher.load("{Data}KickBlox.luau")()
+local Luxy = loadstring(game:HttpGet(LibraryURL))()
+local DB   = loadstring(game:HttpGet(DataURL))()
 
+-- ==========================================
 -- [ UI INITIALIZATION ]
+-- ==========================================
 local Win      = Luxy.CreateMain("Luxy HUB")
 local Tab1     = Win:CreateTab("Main", Luxy.GetIcon and Luxy.GetIcon("home") or "rbxassetid://10723407389")
 local TabShop  = Win:CreateTab("Shop", Luxy.GetIcon and Luxy.GetIcon("shoppingcart") or "rbxassetid://10734952479")
-
 -- ==========================================
 -- [ ENVIRONMENT & VARIABLES (KILL-SWITCH) ]
 -- ==========================================
